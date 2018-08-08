@@ -128,11 +128,11 @@
 }
 
 .btn-7a.btn-activated {
-	animation: fadeOutText 0.5s;
+	animation: fadeOutText 0.8s;
 }
 
 .btn-7a.btn-activated:before {
-	animation: moveToRight 0.5s;
+	animation: moveToRight 0.8s;
 }
 
 

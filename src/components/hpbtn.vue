@@ -40,6 +40,7 @@ export default {
 }
 .btn{
   height: 40px;
+  width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;

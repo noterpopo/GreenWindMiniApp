@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-       <hpbtn>Hello</hpbtn>
+       <hpbtn>开始</hpbtn>
     </div>
 </template>
 

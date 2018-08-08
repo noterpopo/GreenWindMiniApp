@@ -1,6 +1,10 @@
 <template>
     <div class="container">
-       <hpbtn>开始</hpbtn>
+       <ul>
+           <li><img src="../../../static/img/title.png"></li>
+           <li class="btn"><hpbtn>开始</hpbtn></li>
+           <li class="btn"><hpbtn>关于</hpbtn></li>
+       </ul>
     </div>
 </template>
 
@@ -26,7 +30,6 @@ export default {
 </script>
 
 <style>
-@import '../../../static/css/component.css';
 * {
     margin: 0px;
     padding: 0px;
@@ -36,13 +39,19 @@ html {
 }
 
 .container{
-    background-image: url(https://pic3.zhimg.com/80/v2-3eb0435c2a892a5c3222d2454c77fb66_hd.jpg) ;
-    width: 100%;
+    background-color: #F0F0D8;
     height: 100%;
     background-size: 100% 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.btn{
+    margin: 30px 0px;
+}
+img{
+    height: 80px;
+    width: 240px;
 }
 </style>
 

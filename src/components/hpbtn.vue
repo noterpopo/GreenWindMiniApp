@@ -28,6 +28,7 @@ export default {
 </script>
 
 <style scoped>
+
 @font-face {
 	font-family: 'icomoon';
 	src:url('../../static/fonts/icomoon/icomoon.eot');
@@ -39,23 +40,27 @@ export default {
 	font-style: normal;
 }
 .btn{
+  font-size: 120%;
   height: 40px;
   width: 250px;
   display: flex;
   align-items: center;
   justify-content: center;
 	position: relative;
-  background: #17aa56;
-	color: #fff;
+  background :transparent;
+	color: #41403E;
   border-radius: 7px;
   padding-left: 50px;
-  box-shadow: 0 5px #119e4d;
+  outline: none;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border: solid 2px #41403E;
 }
 .btn:before{
   position: absolute;
 	width: 40%;
 	font-size: 150%;
-  color: #0a833d;
+  color: #41403E;
   left: 0;
   font-family:"icomoon" !important;
   font-style:normal;
@@ -75,7 +80,7 @@ export default {
 @keyframes fadeOutText {
 	0% { color: transparent; }
 	80% { color: transparent; }
-	100% { color: #fff; }
+	100% { color: #41403E; }
 }
 @keyframes moveToRight {
 	80% { transform: translateX(250%); }

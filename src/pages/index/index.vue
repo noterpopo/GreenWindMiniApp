@@ -1,8 +1,8 @@
 <template>
     <div class="container">
+        <img src="../../../static/img/title.png">
        <ul>
-           <li><img src="../../../static/img/title.png"></li>
-           <li class="btn"><hpbtn>开始</hpbtn></li>
+           <li class="btn" ><hpbtn @btnclick='onclick'>开始</hpbtn></li>
            <li class="btn"><hpbtn>关于</hpbtn></li>
        </ul>
     </div>
@@ -24,7 +24,11 @@ export default {
 
   },
   methods: {
-
+    onclick: function () {
+      wx.navigateTo({
+        url: '../question/main'
+      })
+    }
   }
 }
 </script>
@@ -45,13 +49,15 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 .btn{
     margin: 30px 0px;
 }
 img{
     height: 80px;
-    width: 240px;
+    width: 90%;
+    margin: 0 auto;
 }
 </style>
 

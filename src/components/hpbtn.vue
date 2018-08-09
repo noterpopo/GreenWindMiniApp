@@ -1,26 +1,37 @@
 <template>
-    <button class=“” @click="handleClick" :class="isActived"><slot></slot></button>
+  <button @click="handleClick" :class="classCom"><slot></slot></button>
 </template>
 
 <script>
 export default {
   data: function () {
     return {
-      isActive: false
+      className: {
+        'btn': true,
+        'icon-arrow-right': true,
+        'btn-active': false
+      }
     }
   },
   computed: {
-    isActived: function () {
-      if (this.isActive) {
-        return 'btn-active btn icon-arrow-right'
-      } else {
-        return 'btn icon-arrow-right'
+    classCom: function () {
+      let arr = []
+      for (let p in this.className) {
+        if (this.className[p]) {
+          arr.push(p)
+        }
       }
+      return arr.join(' ')
     }
   },
   methods: {
     handleClick: function () {
-      this.isActive = !this.isActive
+      var that = this
+      this.className['btn-active'] = true
+      setTimeout(function () {
+        that.className['btn-active'] = false
+        that.$emit('btnclick')
+      }, 400)
     }
   }
 

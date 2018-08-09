@@ -1,9 +1,9 @@
 <template>
     <div class="container">
-        <img src="../../../static/img/title.png">
+        <p class="title">绿色风招新小程序</p>
        <ul>
-           <li class="btn" ><hpbtn @btnclick='onclick'>开始</hpbtn></li>
-           <li class="btn"><hpbtn>关于</hpbtn></li>
+           <li class="btn" ><hpbtn icon='.icon-arrow-right' anim="ani-rigtht" @btnClick='onclick'>开始</hpbtn></li>
+           <li class="btn"><hpbtn icon='icon-cog' anim="ani-rotate">关于</hpbtn></li>
        </ul>
     </div>
 </template>
@@ -34,6 +34,7 @@ export default {
 </script>
 
 <style>
+@import '../../../static/css/hpfont.css';
 * {
     margin: 0px;
     padding: 0px;
@@ -53,11 +54,14 @@ html {
 }
 .btn{
     margin: 30px 0px;
+    height: 60px;
+    width: 250px;
 }
-img{
-    height: 80px;
-    width: 90%;
-    margin: 0 auto;
+.title{
+    font-family:'AaWanWan13c2ad632a1dbb2';
+    font-size: 40px;
+    color: #41403E;
+    margin-bottom: 30px;
 }
 </style>
 

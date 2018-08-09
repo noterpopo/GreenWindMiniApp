@@ -10,7 +10,7 @@ app.$mount()
 export default {
 
   config: {
-    pages: ['^pages/index/main', 'pages/question/main'],
+    pages: ['pages/index/main', '^pages/question/main'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',

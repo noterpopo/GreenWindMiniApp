@@ -1,6 +1,5 @@
 <template>
     <div class="container">
-        <canvas ref="circle" width="200" height="200"></canvas>
     </div>
 </template>
 
@@ -10,18 +9,6 @@ export default {
     return {
       hello: 'hello'
     }
-  },
-  mounted: function () {
-    var cir = this.$refs.circle
-    var ctx = cir.getContext('2d')
-    ctx.beginPath()
-    ctx.arc(100, 100, 50, 0, 2 * Math.PI, false)
-
-    // new added
-    ctx.lineWidth = 15
-
-    ctx.strokeStyle = 'red'
-    ctx.stroke()
   }
 }
 </script>

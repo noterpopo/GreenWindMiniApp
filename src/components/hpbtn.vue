@@ -48,7 +48,7 @@ export default {
 
 .btn{
   font-family:'AaWanWan13c2ad632a1dbb2';
-  font-size: 30px;
+  font-size: 60rpx;
   height: 100%;
   width: 100%;
   display: flex;
@@ -57,12 +57,12 @@ export default {
 	position: relative;
   background :transparent;
 	color: #41403E;
-  border-radius: 7px;
-  padding-left: 50px;
+  border-radius: 14rpx;
+  padding-left: 100rpx;
   outline: none;
-  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
-  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-  border: solid 2px #41403E;
+  box-shadow: 40rpx 76rpx 68rpx -52rpx rgba(0, 0, 0, 0.2);
+  border-radius: 510rpx 30rpx 450rpx 30rpx/30rpx 450rpx 30rpx 510rpx;
+  border: solid 4rpx #41403E;
 }
 .btn:before{
   position: absolute;

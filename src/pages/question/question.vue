@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="cirprogress">
-            <circleprogress :radius="100"></circleprogress>
+            <circleprogress></circleprogress>
         </div>
         <div class="ques">Helooooooooo</div>
             <ul>
@@ -30,8 +30,8 @@ export default {
 
 <style>
 * {
-    margin: 0px;
-    padding: 0px;
+    margin: 0rpx;
+    padding: 0rpx;
 }
 html {
     height: 100%;
@@ -47,8 +47,8 @@ html {
     flex-direction: column;
 }
 .cirprogress{
-    height: 100px;
-    width: 100px;
+    height: 180rpx;
+    width: 180rpx;
 }
 </style>
 

@@ -53,15 +53,15 @@ html {
     flex-direction: column;
 }
 .btn{
-    margin: 30px 0px;
-    height: 60px;
-    width: 250px;
+    margin: 60rpx 0rpx;
+    height: 120rpx;
+    width: 500rpx;
 }
 .title{
     font-family:'AaWanWan13c2ad632a1dbb2';
-    font-size: 40px;
+    font-size: 80rpx;
     color: #41403E;
-    margin-bottom: 30px;
+    margin-bottom: 60rpx;
 }
 </style>
 

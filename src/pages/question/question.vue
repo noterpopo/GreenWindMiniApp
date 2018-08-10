@@ -1,6 +1,15 @@
 <template>
     <div class="container">
-        <circleprogress></circleprogress>
+        <div class="cirprogress">
+            <circleprogress :radius="100"></circleprogress>
+        </div>
+        <div class="ques">Helooooooooo</div>
+            <ul>
+                <li>AAAAA</li>
+                <li>BBBBB</li>
+                <li>CCCCCCC</li>
+                <li>DDDDDDD</li>
+            </ul>
     </div>
 </template>
 
@@ -36,6 +45,10 @@ html {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+.cirprogress{
+    height: 100px;
+    width: 100px;
 }
 </style>
 

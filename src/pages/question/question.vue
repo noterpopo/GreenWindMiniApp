@@ -1,14 +1,20 @@
 <template>
     <div class="container">
+        <circleprogress></circleprogress>
     </div>
 </template>
 
 <script>
+import circleprogress from '../../components/circle-progress.vue'
+
 export default {
   data: function () {
     return {
       hello: 'hello'
     }
+  },
+  components: {
+    circleprogress
   }
 }
 </script>

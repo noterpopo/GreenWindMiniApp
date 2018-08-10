@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="cirprogress">
-            <circleprogress></circleprogress>
+            <circleprogress ref='cirpb'></circleprogress>
         </div>
         <div class="ques">Helooooooooo</div>
             <ul>

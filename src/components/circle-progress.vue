@@ -105,6 +105,15 @@ export default {
           clearInterval(that.countTimer)
         }
       }, 50)
+    },
+    cancleTimer: function () {
+      clearInterval(this.countTimer)
+    },
+    startTimer: function () {
+      this.cancleTimer()
+      this.count = 300
+      this.time = 15
+      this.countInterval()
     }
   }
 }

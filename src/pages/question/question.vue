@@ -3,27 +3,41 @@
         <div class="cirprogress">
             <circleprogress ref='cirpb'></circleprogress>
         </div>
-        <div class="ques">Helooooooooo</div>
+        <p class="ques">这是占位这是占位这是占位这是占位这是占位</p>
             <ul>
-                <li>AAAAA</li>
-                <li>BBBBB</li>
-                <li>CCCCCCC</li>
-                <li>DDDDDDD</li>
+                <li  class="ansbtn">
+                    <ansbtn icon='.icon-A' anim="ani-rigtht" :ans="answers[0]" @btnClick='onclick'></ansbtn>
+                </li>
+                <li  class="ansbtn">
+                    <ansbtn icon='.icon-B' anim="ani-rigtht" :ans="answers[1]" @btnClick='onclick'>{{answers[1]}}</ansbtn>
+                </li>
+                <li  class="ansbtn">
+                    <ansbtn icon='.icon-C' anim="ani-rigtht" :ans="answers[2]" @btnClick='onclick'>{{answers[2]}}</ansbtn>
+                </li>
+                <li  class="ansbtn">
+                    <ansbtn icon='.icon-D' anim="ani-rigtht" :ans="answers[3]" @btnClick='onclick'>{{answers[3]}}</ansbtn>
+                </li>
             </ul>
     </div>
 </template>
 
 <script>
 import circleprogress from '../../components/circle-progress.vue'
-
+import ansbtn from '../../components/ansbtn.vue'
 export default {
   data: function () {
     return {
-      hello: 'hello'
+      answers: [
+        '占位',
+        '占位',
+        '占位',
+        '占位'
+      ]
     }
   },
   components: {
-    circleprogress
+    circleprogress,
+    ansbtn
   }
 }
 </script>
@@ -49,6 +63,15 @@ html {
 .cirprogress{
     height: 180rpx;
     width: 180rpx;
+}
+.ques{
+    font-size: 40rpx;
+    margin: 0rpx  70rpx;
+}
+.ansbtn{
+    margin: 60rpx 0rpx;
+    height: 120rpx;
+    width: 500rpx;
 }
 </style>
 

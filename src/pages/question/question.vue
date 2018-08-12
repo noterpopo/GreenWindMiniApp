@@ -5,17 +5,8 @@
         </div>
         <p class="ques">这是占位这是占位这是占位这是占位这是占位</p>
             <ul>
-                <li  class="ansbtn">
-                    <ansbtn anim="ani-success" :ans="answers[0]" @btnClick='onclick'></ansbtn>
-                </li>
-                <li  class="ansbtn">
-                    <ansbtn anim="ani-error" :ans="answers[1]" @btnClick='onclick'>{{answers[1]}}</ansbtn>
-                </li>
-                <li  class="ansbtn">
-                    <ansbtn anim="ani-rigtht" :ans="answers[2]" @btnClick='onclick'>{{answers[2]}}</ansbtn>
-                </li>
-                <li  class="ansbtn">
-                    <ansbtn anim="ani-rigtht" :ans="answers[3]" @btnClick='onclick'>{{answers[3]}}</ansbtn>
+                <li  class="ansbtn" v-for="(answer,index) in answers" :key="index">
+                    <ansbtn :anim="animcom(index)" :ans="answers[index]" @btnClick='onclick(index)'></ansbtn>
                 </li>
             </ul>
     </div>
@@ -32,7 +23,8 @@ export default {
         'B.占位',
         'C.占位占位占位占位占位占位占位占位占位占位占位占位占占位',
         'D.占位占位占位占位占位占位占位占位占位占位占位占位占占位'
-      ]
+      ],
+      rightans: 0
     }
   },
   components: {
@@ -40,8 +32,18 @@ export default {
     ansbtn
   },
   methods: {
-    onclick: function () {
+    onclick: function (index) {
+      if (index === this.rightans) {
 
+      } else {
+
+      }
+    },
+    animcom: function (index) {
+      if (this.rightans === index) {
+        return 'ani-success'
+      }
+      return 'ani-error'
     }
   }
 }

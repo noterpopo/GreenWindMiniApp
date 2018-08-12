@@ -66,7 +66,7 @@ btn:after{
   top: 0;
   left: 0;
   height: 100%;
-  width: 0;
+  width: 100%;
   transition: none;
 }
 
@@ -82,7 +82,8 @@ btn:after{
     animation: moveToRight 0.6s;
 }
 .ani-success:after{
-  background: #0a833d;
+  background: rgb(112, 196, 112);
+  opacity: 0.2;
   animation: fillToRight 0.6s;
 }
 .ani-error{
@@ -119,7 +120,7 @@ btn:after{
 }
 @keyframes fillToRight {
 	to { 
-		width: 100%;
+		width: 0%;
 	}
 }
 </style>

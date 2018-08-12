@@ -66,12 +66,13 @@ html {
     flex-direction: column;
 }
 .cirprogress{
-    height: 180rpx;
-    width: 180rpx;
+    height: 120rpx;
+    width: 120rpx;
+    margin-bottom: 30rpx;
 }
 .ques{
     font-size: 36rpx;
-    margin: 0rpx  70rpx;
+    margin: 10rpx  70rpx;
 }
 .ansbtn{
     margin: 20rpx 100rpx;

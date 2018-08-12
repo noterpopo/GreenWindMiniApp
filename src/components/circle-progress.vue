@@ -66,7 +66,7 @@ export default {
       ctx.setStrokeStyle('#20183b') // 设置圆环的颜色
       ctx.setLineCap('round') // 设置圆环端点的形状
       ctx.beginPath()// 开始一个新的路径
-      ctx.arc(this.r, this.r, this.r - 5 / 50 * this.r, 0, 2 * Math.PI, false)
+      ctx.arc(this.r, this.r, this.r - 8 / 50 * this.r, 0, 2 * Math.PI, false)
       ctx.stroke()// 对当前路径进行描边
       ctx.draw()
     },
@@ -78,12 +78,12 @@ export default {
       gradient.addColorStop('0.5', '#40ED94')
       gradient.addColorStop('1.0', '#5956CC')
 
-      context.setLineWidth(10 / 50 * this.r)
+      context.setLineWidth(16 / 50 * this.r)
       context.setStrokeStyle(gradient)
       context.setLineCap('round')
       context.beginPath()
       // 参数step 为绘制的圆环周长，从0到2为一周 。 -Math.PI / 2 将起始角设在12点钟位置 ，结束角 通过改变 step 的值确定
-      context.arc(this.r, this.r, this.r - 5 / 50 * this.r, -Math.PI / 2, step * Math.PI - Math.PI / 2, false)
+      context.arc(this.r, this.r, this.r - 8 / 50 * this.r, -Math.PI / 2, step * Math.PI - Math.PI / 2, false)
       context.stroke()
       context.draw()
     },

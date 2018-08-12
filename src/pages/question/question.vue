@@ -53,7 +53,7 @@ export default {
         if (this.life <= 0) {
           this.$refs.cirpb.cancleTimer()
           wx.redirectTo({
-            url: '../result/main'
+            url: '../result/main?score=' + this.score
           })
         } else {
           this.$refs.cirpb.startTimer()

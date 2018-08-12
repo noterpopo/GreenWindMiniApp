@@ -35,7 +35,7 @@ export default {
         that.className['btn-active'] = false
         that.isDisabled = false
         that.$emit('btnClick')
-      }, 560)
+      }, 500)
     }
   }
 

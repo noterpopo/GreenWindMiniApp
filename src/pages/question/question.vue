@@ -9,7 +9,7 @@
                     <ansbtn anim="ani-success" :ans="answers[0]" @btnClick='onclick'></ansbtn>
                 </li>
                 <li  class="ansbtn">
-                    <ansbtn anim="ani-success" :ans="answers[1]" @btnClick='onclick'>{{answers[1]}}</ansbtn>
+                    <ansbtn anim="ani-error" :ans="answers[1]" @btnClick='onclick'>{{answers[1]}}</ansbtn>
                 </li>
                 <li  class="ansbtn">
                     <ansbtn anim="ani-rigtht" :ans="answers[2]" @btnClick='onclick'>{{answers[2]}}</ansbtn>

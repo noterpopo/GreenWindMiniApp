@@ -61,6 +61,14 @@ export default {
 .btn[disabled]{
   background: transparent;
 }
+btn:after{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  transition: none;
+}
 
 /* icon */
 
@@ -74,9 +82,11 @@ export default {
     animation: moveToRight 0.6s;
 }
 .ani-success:after{
-  z-index: 1;
-  content: ' 正确';
-  animation: moveUp 0.6s;
+  background: #0a833d;
+  animation: fillToRight 0.6s;
+}
+.ani-error{
+  animation: shake 0.6s;
 }
 
 @keyframes fadeOutText {
@@ -100,6 +110,16 @@ export default {
 	100% { 
 		opacity: 1;
 		transform: translateY(0);
+	}
+}
+@keyframes shake {
+	0%, 80% {transform: translateX(0);}
+	10%, 30%, 50%, 70% {transform: translateX(-10px);}
+	20%, 40%, 60% {transform: translateX(10px);}
+}
+@keyframes fillToRight {
+	to { 
+		width: 100%;
 	}
 }
 </style>

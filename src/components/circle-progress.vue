@@ -40,8 +40,8 @@
 export default {
   data: function () {
     return {
-      time: 15,
-      count: 300,
+      time: 10,
+      count: 200,
       countTimer: null,
       r: 0
     }
@@ -96,7 +96,7 @@ export default {
         注意此处 传参 step 取值范围是0到2，
         所以 计数器 最大值 60 对应 2 做处理，计数器count=60的时候step=2
         */
-          that.drawProgress(that.count / (300 / 2))
+          that.drawProgress(that.count / (200 / 2))
           that.count--
           if (that.count % 20 === 0) {
             that.time = that.count / 20
@@ -111,8 +111,8 @@ export default {
     },
     startTimer: function () {
       this.cancleTimer()
-      this.count = 300
-      this.time = 15
+      this.count = 200
+      this.time = 10
       this.countInterval()
     }
   }

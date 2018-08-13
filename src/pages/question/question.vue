@@ -7,7 +7,7 @@
         <div class="cirprogress">
             <circleprogress ref='cirpb' @timeout='navToResult'></circleprogress>
         </div>
-        <p class="ques">这是占位这是占位这是占位这是占位这是占位</p>
+        <p class="ques">{{ques}}</p>
         <ul>
             <li  class="ansbtn" v-for="(answer,index) in answers" :key="index">
                 <ansbtn :anim="animcom(index)" :ans="answers[index]" @btnClick='onclick(index)'></ansbtn>
@@ -22,6 +22,7 @@ import ansbtn from '../../components/ansbtn.vue'
 export default {
   data: function () {
     return {
+      ques: '这是占位这是占位这是占位这是占位这是占位',
       answers: [
         'A.占位占位占位占位占位占位占位占位占位占位占位占位占占位',
         'B.占位',
@@ -34,6 +35,9 @@ export default {
       isLifeMin: false,
       isScoreAdd: false
     }
+  },
+  mounted: function () {
+    this.getQuestion()
   },
   onUnload: function () {
     this.life = 3
@@ -97,6 +101,16 @@ export default {
       this.$refs.cirpb.cancleTimer()
       wx.redirectTo({
         url: '../result/main?score=' + this.score
+      })
+    },
+    getQuestion: function () {
+      var that = this
+      wx.request({
+        url: 'http://119.29.233.87:8082/questions/0',
+        succcess: function (res) {
+          console.log(res.data)
+          that.ques = res.data.getQuestion
+        }
       })
     }
   }

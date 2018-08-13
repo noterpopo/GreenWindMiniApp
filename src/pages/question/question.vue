@@ -2,8 +2,10 @@
     <div class="container">
         <p class="life icon-heart">：{{life}}</p>
         <p class="score icon-star">：{{score}}</p>
+        <p :class="lifeCom">- 1</p>
+        <p :class="scoreCom">+ 1</p>
         <div class="cirprogress">
-            <circleprogress ref='cirpb'></circleprogress>
+            <circleprogress ref='cirpb' @timeout='navToResult'></circleprogress>
         </div>
         <p class="ques">这是占位这是占位这是占位这是占位这是占位</p>
         <ul>
@@ -28,11 +30,10 @@ export default {
       ],
       rightans: 0,
       score: 0,
-      life: 3
+      life: 3,
+      isLifeMin: false,
+      isScoreAdd: false
     }
-  },
-  mounted: function () {
-    this.$refs.cirpb.startTimer()
   },
   onUnload: function () {
     this.life = 3
@@ -43,18 +44,44 @@ export default {
     circleprogress,
     ansbtn
   },
+  computed: {
+    lifeCom: function () {
+      let arr = []
+      arr.push('lifemin')
+      arr.push('icon-heart')
+      if (this.isLifeMin) {
+        arr.push('ani-moveUp')
+      }
+      return arr.join(' ')
+    },
+    scoreCom: function () {
+      let arr = []
+      arr.push('scoreadd')
+      arr.push('icon-star')
+      if (this.isScoreAdd) {
+        arr.push('ani-moveUp')
+      }
+      return arr.join(' ')
+    }
+  },
   methods: {
     onclick: function (index) {
+      var that = this
       if (index === this.rightans) {
+        this.isScoreAdd = true
+        setTimeout(function () {
+          that.isScoreAdd = false
+        }, 500)
         this.score++
         this.$refs.cirpb.startTimer()
       } else {
+        this.isLifeMin = true
         this.life--
+        setTimeout(function () {
+          that.isLifeMin = false
+        }, 500)
         if (this.life <= 0) {
-          this.$refs.cirpb.cancleTimer()
-          wx.redirectTo({
-            url: '../result/main?score=' + this.score
-          })
+          this.navToResult()
         } else {
           this.$refs.cirpb.startTimer()
         }
@@ -65,6 +92,12 @@ export default {
         return 'ani-success'
       }
       return 'ani-error'
+    },
+    navToResult: function () {
+      this.$refs.cirpb.cancleTimer()
+      wx.redirectTo({
+        url: '../result/main?score=' + this.score
+      })
     }
   }
 }
@@ -139,6 +172,47 @@ html {
     font-family:"icomoon" !important;
     font-style:normal;
     -webkit-font-smoothing: antialiased;
+}
+.lifemin{
+    font-size: 70rpx;
+    position: fixed;
+    z-index: 1;
+    opacity: 0;
+}
+.lifemin:before{
+    margin-right: 8rpx;
+    color: red;
+    font-size: 70rpx;
+    font-family:"icomoon" !important;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+}
+.scoreadd{
+    font-size: 70rpx;
+    position: fixed;
+    z-index: 1;
+    opacity: 0;
+}
+.scoreadd:before{
+    margin-right: 8rpx;
+    color: blue;
+    font-size: 70rpx;
+    font-family:"icomoon" !important;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+}
+.ani-moveUp{
+  animation: moveUp 0.5s
+}
+@keyframes moveUp {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% { 
+		opacity: 1;
+		transform: translateY(-100%);
+	}
 }
 </style>
 

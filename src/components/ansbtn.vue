@@ -64,7 +64,7 @@ export default {
 btn:after{
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   height: 100%;
   width: 100%;
   transition: none;
@@ -75,12 +75,6 @@ btn:after{
 
 /* anim */
 
-.ani-fadeout{
-    animation: fadeOutText 0.6s;
-}
-.ani-rigtht{
-    animation: moveToRight 0.6s;
-}
 .ani-success:after{
   background: rgb(112, 196, 112);
   opacity: 0.2;
@@ -89,29 +83,10 @@ btn:after{
 .ani-error{
   animation: shake 0.6s;
 }
-
-@keyframes fadeOutText {
-	0% { color: transparent; }
-	80% { color: transparent; }
-	100% { color: #41403E; }
-}
-@keyframes moveToRight {
-	80% { transform: translateX(250%); }
-	81% { opacity: 1; transform: translateX(250%); }
-	82% { opacity: 0; transform: translateX(250%); }
-	83% { opacity: 0; transform: translateX(-50%); }
-	84% { opacity: 1; transform: translateX(-50%);  }
-	100% { transform: translateX(0%); }
-}
-@keyframes moveUp {
-	0% {
-		transform: translateY(50%);
-		opacity: 0;
-	}
-	100% { 
-		opacity: 1;
-		transform: translateY(0);
-	}
+.ani-error:after{
+  background: rgb(255, 0, 0);
+  opacity: 0.2;
+  animation: fillToTop 0.6s;
 }
 @keyframes shake {
 	0%, 80% {transform: translateX(0);}
@@ -122,6 +97,16 @@ btn:after{
 	to { 
 		width: 0%;
 	}
+}
+@keyframes fillToTop {
+	50% { 
+		opacity: 0.2;
+    transform: scale(0.5);
+	}
+  100%{
+    opacity: 0.2;
+    transform: scale(1)
+  }
 }
 </style>
 

@@ -102,7 +102,7 @@ export default {
             that.time = that.count / 20
           }
         } else {
-          clearInterval(that.countTimer)
+          that.$emit('timeout')
         }
       }, 50)
     },

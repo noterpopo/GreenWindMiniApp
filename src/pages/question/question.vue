@@ -106,7 +106,7 @@ export default {
     getQuestion: function () {
       var that = this
       wx.request({
-        url: 'http://119.29.233.87:8082/questions/0',
+        url: 'https://szugreenwind.club/api/questions/0',
         succcess: function (res) {
           console.log(res.data)
           that.ques = res.data.getQuestion

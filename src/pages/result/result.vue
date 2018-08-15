@@ -1,10 +1,11 @@
 <template>
-    <div>Hello</div>
+  <lottie width="100" height="100" isloop="true" isauto="true"></lottie>
 </template>
 <script>
+import lottie from '../../components/lottie.vue'
 export default {
-  onLoad: function (options) {
-    console.log(options.score)
+  components: {
+    lottie
   }
 }
 </script>
